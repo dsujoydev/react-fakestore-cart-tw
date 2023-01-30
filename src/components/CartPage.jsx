@@ -6,15 +6,16 @@ import { CartContext } from "./CartContext";
 
 const CartPage = () => {
   // const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart } = useContext(CartContext);
+  const { cart, total } = useContext(CartContext);
   return (
-    <div>
+    <div className="">
       CartItems
-      <div className="flex flex-col ">
+      <div className="">
         {cart.map((item) => {
-          return <span>{item.title}</span>;
+          return <CartItems item={item} key={item.id} />;
         })}
       </div>
+      Total: {total}
     </div>
   );
 };

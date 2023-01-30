@@ -30,7 +30,7 @@ const Home = () => {
                   <span>{products.price}$</span>
                   <button
                     onClick={() => addToCart(products)}
-                    className="bg-orange-400 px-4 py-2 hover:bg-red-600 "
+                    className="bg-orange-400 px-4 py-2 hover:bg-orange-600 rounded-md text-slate-50 font-semibold"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
