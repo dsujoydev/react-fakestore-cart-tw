@@ -1,21 +1,20 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import CartItems from "./CartItems";
-import { SidebarContext } from "./SidebarContext";
 import { CartContext } from "./CartContext";
 
 const CartPage = () => {
-  // const { isOpen, handleClose } = useContext(SidebarContext);
   const { cart, total } = useContext(CartContext);
   return (
-    <div className="">
+    <div className="my-10 flex flex-col items-center container-xl">
       CartItems
       <div className="">
         {cart.map((item) => {
           return <CartItems item={item} key={item.id} />;
         })}
       </div>
-      Total: {total}
+      <span className="p-4 text-lg font-bold border border-stone-800 bg-orange-400">
+        Total: {total}
+      </span>
     </div>
   );
 };

@@ -13,12 +13,16 @@ const CartProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [itemAmount, setItemAmount] = useState(0);
 
+  // display total money of items in cartpage
+
   useEffect(() => {
     const total = cart.reduce((accumulator, currentItem) => {
       return accumulator + currentItem.price * currentItem.amount;
     }, 0);
     setTotal(total);
   });
+
+  // display Amount of items in cart
 
   useEffect(() => {
     if (cart) {
@@ -28,6 +32,8 @@ const CartProvider = ({ children }) => {
       setItemAmount(amount);
     }
   }, [cart]);
+
+  // Add items to cart from Home
 
   const addToCart = (products, id) => {
     const newItem = { ...products, amount: 1 };
@@ -46,9 +52,9 @@ const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, newItem]);
     }
-    // console.log(products);
-    // console.log(`${products.title}addded to cart `);
   };
+
+  // Remove items from cart using delete button
 
   const removeFromCart = (id) => {
     const newCart = cart.filter((item) => {
@@ -57,10 +63,14 @@ const CartProvider = ({ children }) => {
     setCart(newCart);
   };
 
+  // Increse amount of a single item
+
   const increaseAmount = (id) => {
     const cartItem = cart.find((item) => item.id === id);
     addToCart(cartItem, id);
   };
+
+  // decrease amount of a single item and remove it if the item number is 0
 
   const decreaseAmount = (id) => {
     const cartItem = cart.find((item) => {

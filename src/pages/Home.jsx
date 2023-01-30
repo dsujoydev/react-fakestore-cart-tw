@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { ProductFetch } from "../components/ProductFetch";
 import { Link } from "react-router-dom";
-// import Product from "../components/Product";
 import { CartContext } from "../components/CartContext";
 
 const Home = () => {
@@ -15,9 +14,13 @@ const Home = () => {
           {product.map((products) => {
             return (
               <div className="w-full h-250px rounded bg-white shadow-xl flex flex-col justify-center items-center border-solid border-2 border-black gap-7">
-                <div className="text-center h-2 mb-2 p-5" key={products.id}>
+                <Link
+                  className=" h-2 mb-2 p-5 font-semibold"
+                  key={products.id}
+                  to={`/product/${products.id}`}
+                >
                   {products.title}
-                </div>
+                </Link>
 
                 <div className="w-[250px] flex justify-center ">
                   <img
@@ -27,10 +30,12 @@ const Home = () => {
                   />
                 </div>
                 <div className="flex justify-between items-center gap-3">
-                  <span>{products.price}$</span>
+                  <span className="text-md font-mono font-semibold">
+                    {products.price}$
+                  </span>
                   <button
                     onClick={() => addToCart(products)}
-                    className="bg-orange-400 px-4 py-2 hover:bg-orange-600 rounded-md text-slate-50 font-semibold"
+                    className="bg-orange-400 px-4 py-2 hover:bg-orange-500 rounded-md text-black text-md font-bold"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
