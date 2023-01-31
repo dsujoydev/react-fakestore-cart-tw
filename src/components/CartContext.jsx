@@ -3,7 +3,7 @@ import React, {
   useContext,
   useEffect,
   createContext,
-  Children,
+  children,
   useReducer,
 } from "react";
 

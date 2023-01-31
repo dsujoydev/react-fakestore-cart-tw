@@ -21,7 +21,10 @@ const CartItems = ({ item }) => {
             </span>
             <div className="flex gap-4">
               <div className=" bg-white flex gap-2 border border-slate-600 font-extrabold text-md">
-                <button className="p-2 " onClick={() => decreaseAmount(id)}>
+                <button
+                  className="p-2 bg-slate-400"
+                  onClick={() => decreaseAmount(id)}
+                >
                   -
                 </button>
                 <span className="p-2 border-x-2 border-black">{amount}</span>

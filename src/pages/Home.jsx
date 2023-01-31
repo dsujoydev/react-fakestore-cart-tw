@@ -34,7 +34,7 @@ const Home = () => {
                     {products.price}$
                   </span>
                   <button
-                    onClick={() => addToCart(products)}
+                    onClick={() => addToCart(products, products.id)}
                     className="bg-orange-400 px-4 py-2 hover:bg-orange-500 rounded-md text-black text-md font-bold"
                   >
                     <svg
