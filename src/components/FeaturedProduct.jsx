@@ -24,16 +24,17 @@ const FeaturedProduct = () => {
             key={product.id}
             className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col justify-between"
           >
-            {/* Product Image */}
-            <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 mb-4">
-              <img src={product.image} alt={product.title} className="h-48 w-full object-cover object-center" />
+            {/* Product Image with Hover Effect */}
+            <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 mb-4 group">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="h-48 w-full object-cover object-center group-hover:scale-110 transition-transform duration-300"
+              />
             </div>
 
             {/* Product Title */}
-            <h3
-              className="text-lg font-medium text-gray-900 mb-2 truncate"
-              title={product.title} // Shows full title on hover
-            >
+            <h3 className="text-lg font-medium text-gray-900 mb-2 truncate" title={product.title}>
               {product.title.length > 20 ? `${product.title.substring(0, 20)}...` : product.title}
             </h3>
 
