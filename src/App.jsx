@@ -5,12 +5,6 @@ import Navigation from "./components/layouts/Navigation";
 import Home from "./pages/Home";
 import CartPage from "./pages/CartPage";
 import Footer from "./components/layouts/Footer";
-// import { CartProvider } from './context/CartContext';
-// import Navigation from './components/Navigation';
-// import Footer from './components/Footer';
-// import Home from './pages/Home';
-// import CartPage from './pages/CartPage';
-// import ProductDetails from './pages/ProductDetails';
 
 function App() {
   return (

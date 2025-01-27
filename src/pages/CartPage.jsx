@@ -1,6 +1,4 @@
 import React from "react";
-// import { useCart } from "../context/CartContext";
-// import CartItem from "../components/CartItem";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import CartItems from "../components/CartItems";

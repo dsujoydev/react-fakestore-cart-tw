@@ -1,5 +1,4 @@
 import React from "react";
-// import { useCart } from '../context/CartContext';
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useCart } from "../context/CartContext";
 

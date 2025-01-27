@@ -1,19 +1,18 @@
 import React from "react";
 import { ShoppingBag, Search, ShoppingCart } from "lucide-react";
 import { useCart } from "../../context/CartContext";
-// import { useCart } from '../context/CartContext';
+import { Link } from "react-router-dom";
 
-const Navigation = ({ setShowCart }) => {
+const Navigation = () => {
   const { itemAmount } = useCart();
-
   return (
     <nav className="bg-white shadow-sm fixed w-full z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center cursor-pointer" onClick={() => setShowCart(false)}>
+          <Link to="/" className="flex items-center cursor-pointer">
             <ShoppingBag className="h-8 w-8 text-indigo-600" />
             <span className="ml-2 text-xl font-bold text-gray-900">Store</span>
-          </div>
+          </Link>
 
           {/* Search */}
           <div className="flex-1 max-w-lg mx-8">
@@ -40,12 +39,12 @@ const Navigation = ({ setShowCart }) => {
             <a href="#" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
               Deals
             </a>
-            <button onClick={() => setShowCart(true)} className="relative text-gray-600 hover:text-gray-900 p-2">
+            <Link to="/cart" className="relative text-gray-600 hover:text-gray-900 p-2">
               <ShoppingCart className="h-6 w-6" />
               <span className="absolute -top-1 -right-1 bg-indigo-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
                 {itemAmount}
               </span>
-            </button>
+            </Link>
             <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">
               Sign In
             </button>
